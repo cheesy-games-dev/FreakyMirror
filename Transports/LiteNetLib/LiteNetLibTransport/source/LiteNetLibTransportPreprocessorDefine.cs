@@ -2,6 +2,7 @@
 #if UNITY_EDITOR
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.Build;
 
 namespace LiteNetLibMirror
 {
@@ -13,7 +14,11 @@ namespace LiteNetLibMirror
         [InitializeOnLoadMethod]
         public static void AddDefineSymbols()
         {
+#if UNITY_2023_1_OR_NEWER
+            string currentDefines = PlayerSettings.GetScriptingDefineSymbols(NamedBuildTarget.FromBuildTargetGroup(EditorUserBuildSettings.selectedBuildTargetGroup));
+#else
             string currentDefines = PlayerSettings.GetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup);
+#endif
             HashSet<string> defines = new HashSet<string>(currentDefines.Split(';'))
             {
                 "LITENETLIB_TRANSPORT"
@@ -24,7 +29,11 @@ namespace LiteNetLibMirror
             string newDefines = string.Join(";", defines);
             if (newDefines != currentDefines)
             {
+#if UNITY_2023_1_OR_NEWER
+                PlayerSettings.SetScriptingDefineSymbols(NamedBuildTarget.FromBuildTargetGroup(EditorUserBuildSettings.selectedBuildTargetGroup), newDefines);
+#else
                 PlayerSettings.SetScriptingDefineSymbolsForGroup(EditorUserBuildSettings.selectedBuildTargetGroup, newDefines);
+#endif
             }
         }
     }
