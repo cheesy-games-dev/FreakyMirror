@@ -10,7 +10,7 @@ namespace Mirror.Examples.Common
         Material cachedMaterial;
 
         // Color32 packs to 4 bytes
-        [SyncVar(hook = nameof(SetColor))]
+        [Networked(hook = nameof(SetColor))]
         public Color32 color = Color.black;
 
         void SetColor(Color32 _, Color32 newColor)

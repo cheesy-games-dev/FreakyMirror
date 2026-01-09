@@ -7,11 +7,11 @@ namespace Mirror.Examples.CharacterSelection
     {
         public Transform floatingInfo;
 
-        [SyncVar]
+        [Networked]
         public int characterNumber = 0;
 
         public TextMesh textMeshName;
-        [SyncVar(hook = nameof(HookSetName))]
+        [Networked(hook = nameof(HookSetName))]
         public string playerName = "";
 
         void HookSetName(string _old, string _new)
@@ -20,7 +20,7 @@ namespace Mirror.Examples.CharacterSelection
             AssignName();
         }
         
-        [SyncVar(hook = nameof(HookSetColor))]
+        [Networked(hook = nameof(HookSetColor))]
         public Color characterColour;
         private Material cachedMaterial;
         public MeshRenderer[] characterRenderers;

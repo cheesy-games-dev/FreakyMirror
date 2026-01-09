@@ -34,7 +34,7 @@ namespace Mirror
         /// Syncs animator.speed.
         /// Default to 1 because Animator.speed defaults to 1.
         /// </summary>
-        [SyncVar(hook = nameof(OnAnimatorSpeedChanged))]
+        [Networked(hook = nameof(OnAnimatorSpeedChanged))]
         float animatorSpeed = 1f;
         float previousSpeed = 1f;
 

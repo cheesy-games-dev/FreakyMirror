@@ -20,7 +20,7 @@ namespace Mirror.Examples.Tanks
         public Transform  projectileMount;
 
         [Header("Stats")]
-        [SyncVar] public int health = 5;
+        [Networked] public int health = 5;
 
         // naming for easier debugging
         public override void OnStartClient()

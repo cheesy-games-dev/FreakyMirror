@@ -92,7 +92,7 @@ namespace Mirror.Weaver
                     FieldDefinition field = opFieldstRef.Resolve();
 
                     // [SyncVar]?
-                    if (field.HasCustomAttribute<SyncVarAttribute>())
+                    if (field.HasCustomAttribute<NetworkedAttribute>())
                     {
                         // ILPostProcessor would need to Process() the assembly's
                         // references before processing this one.

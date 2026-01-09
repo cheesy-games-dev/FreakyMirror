@@ -4,16 +4,16 @@ namespace Mirror.Examples.MultipleAdditiveScenes
 {
     public class PlayerScore : NetworkBehaviour
     {
-        [SyncVar]
+        [Networked]
         public int playerNumber;
 
-        [SyncVar]
+        [Networked]
         public int scoreIndex;
 
-        [SyncVar]
+        [Networked]
         public int matchIndex;
 
-        [SyncVar]
+        [Networked]
         public uint score;
 
         public int clientMatchIndex = -1;

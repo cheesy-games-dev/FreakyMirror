@@ -42,7 +42,7 @@ namespace Mirror
 
         public static bool IsSyncVar(this FieldInfo field)
         {
-            object[] fieldMarkers = field.GetCustomAttributes(typeof(SyncVarAttribute), true);
+            object[] fieldMarkers = field.GetCustomAttributes(typeof(NetworkedAttribute), true);
             return fieldMarkers.Length > 0;
         }
 

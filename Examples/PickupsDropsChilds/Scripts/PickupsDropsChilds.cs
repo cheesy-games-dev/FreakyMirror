@@ -19,9 +19,9 @@ namespace Mirror.Examples.PickupsDropsChilds
         // but equippedItemConfig can also be changed independent of equippedItem
         // changing, e.g. reloading usages.
         [Header("SyncVars in Specific Order")]
-        [SyncVar(hook = nameof(OnChangeEquippedItemConfig))]
+        [Networked(hook = nameof(OnChangeEquippedItemConfig))]
         public EquippedItemConfig equippedItemConfig = default;
-        [SyncVar(hook = nameof(OnChangeEquipment))]
+        [Networked(hook = nameof(OnChangeEquipment))]
         public EquippedItem equippedItem;
 
         [Header("Diagnostics")]

@@ -17,7 +17,7 @@ namespace Mirror.Examples.AdditiveLevels
         [Tooltip("Reference to child TextMesh label")]
         public TextMesh label; // don't depend on TMPro. 2019 errors.
 
-        [SyncVar(hook = nameof(OnLabelTextChanged))]
+        [Networked(hook = nameof(OnLabelTextChanged))]
         public string labelText;
 
         public void OnLabelTextChanged(string _, string newValue)

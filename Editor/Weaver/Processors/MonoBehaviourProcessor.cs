@@ -16,7 +16,7 @@ namespace Mirror.Weaver
             // find syncvars
             foreach (FieldDefinition fd in td.Fields)
             {
-                if (fd.HasCustomAttribute<SyncVarAttribute>())
+                if (fd.HasCustomAttribute<NetworkedAttribute>())
                 {
                     Log.Error($"SyncVar {fd.Name} must be inside a NetworkBehaviour.  {td.Name} is not a NetworkBehaviour", fd);
                     WeavingFailed = true;

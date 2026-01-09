@@ -13,7 +13,7 @@ namespace Mirror.Examples.TopDownShooter
         public Vector2 enemySpawnRangeX;
         public Vector2 enemySpawnRangeZ;
 
-        [SyncVar(hook = nameof(OnEnemyCounterChanged))]
+        [Networked(hook = nameof(OnEnemyCounterChanged))]
         public int enemyCounter = 0;
 
         public override void OnStartServer()

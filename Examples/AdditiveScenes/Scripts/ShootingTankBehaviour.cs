@@ -7,7 +7,7 @@ namespace Mirror.Examples.AdditiveScenes
     // Note that all ProximityCheckers should be restricted to the Player layer.
     public class ShootingTankBehaviour : NetworkBehaviour
     {
-        [SyncVar]
+        [Networked]
         public Quaternion rotation;
 
         NetworkAnimator networkAnimator;

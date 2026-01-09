@@ -17,7 +17,7 @@ namespace Mirror.Examples.CouchCoop
         private KeyCode leftKey = KeyCode.LeftArrow;
         private KeyCode rightKey = KeyCode.RightArrow;
 
-        [SyncVar(hook = nameof(OnNumberChangedHook))]
+        [Networked(hook = nameof(OnNumberChangedHook))]
         public int playerNumber = 0;
         public Text textPlayerNumber;
 

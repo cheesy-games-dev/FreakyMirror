@@ -20,14 +20,14 @@ namespace Mirror.Examples.TopDownShooter
         private Vector3 previousPosition;
         private Quaternion previousRotation;
 
-        [SyncVar(hook = nameof(OnFlashLightChanged))]
+        [Networked(hook = nameof(OnFlashLightChanged))]
         public bool flashLightStatus = true;
         public Light flashLight;
 
-        [SyncVar(hook = nameof(OnKillsChanged))]
+        [Networked(hook = nameof(OnKillsChanged))]
         public int kills = 0;
 
-        [SyncVar(hook = nameof(OnPlayerStatusChanged))]
+        [Networked(hook = nameof(OnPlayerStatusChanged))]
         public int playerStatus = 0;
         public GameObject[] objectsToHideOnDeath;
 

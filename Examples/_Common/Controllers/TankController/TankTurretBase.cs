@@ -60,7 +60,7 @@ namespace Mirror.Examples.Common.Controllers.Tank
         [Header("Seated Player")]
         public GameObject playerObject;
 
-        [SyncVar(hook = nameof(OnPlayerColorChanged))]
+        [Networked(hook = nameof(OnPlayerColorChanged))]
         public Color32 playerColor = Color.black;
 
         [Header("Configuration")]

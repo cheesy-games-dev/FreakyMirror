@@ -13,7 +13,7 @@ namespace Mirror.Examples.Common.Controllers.Tank
 
         [Header("Stats")]
         public byte maxHealth = 5;
-        [SyncVar(hook = nameof(OnHealthChanged))]
+        [Networked(hook = nameof(OnHealthChanged))]
         public byte health = 5;
 
         [Header("Respawn")]

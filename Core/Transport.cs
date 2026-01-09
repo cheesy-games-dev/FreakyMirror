@@ -172,8 +172,8 @@ namespace Mirror
         //
         // => see NetworkLoop.cs for detailed explanations!
 #pragma warning disable UNT0001 // Empty Unity message
-        public void Update() {}
-        public void LateUpdate() {}
+        public virtual void Update() {}
+        public virtual void LateUpdate() {}
 #pragma warning restore UNT0001 // Empty Unity message
 
         /// <summary>

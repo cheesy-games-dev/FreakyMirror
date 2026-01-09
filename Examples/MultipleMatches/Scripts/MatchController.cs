@@ -28,7 +28,7 @@ namespace Mirror.Examples.MultipleMatch
         [ReadOnly, SerializeField] internal NetworkIdentity player2;
         [ReadOnly, SerializeField] internal NetworkIdentity startingPlayer;
 
-        [SyncVar(hook = nameof(UpdateGameUI))]
+        [Networked(hook = nameof(UpdateGameUI))]
         [ReadOnly, SerializeField] internal NetworkIdentity currentPlayer;
 
         void Awake()

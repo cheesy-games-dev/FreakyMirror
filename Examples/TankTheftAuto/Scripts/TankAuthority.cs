@@ -15,7 +15,7 @@ namespace Mirror.Examples.TankTheftAuto
         public TankTurretBase tankTurret;
         public GameObject tankTrigger;
 
-        [SyncVar(hook = nameof(OnIsControlledChanged))]
+        [Networked(hook = nameof(OnIsControlledChanged))]
         public bool isControlled;
 
         void OnIsControlledChanged(bool _, bool newValue)

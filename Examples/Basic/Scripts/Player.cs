@@ -27,19 +27,19 @@ namespace Mirror.Examples.Basic
         /// <summary>
         /// This is appended to the player name text, e.g. "Player 01"
         /// </summary>
-        [SyncVar(hook = nameof(PlayerNumberChanged))]
+        [Networked(hook = nameof(PlayerNumberChanged))]
         public byte playerNumber = 0;
 
         /// <summary>
         /// Random color for the playerData text, assigned in OnStartServer
         /// </summary>
-        [SyncVar(hook = nameof(PlayerColorChanged))]
+        [Networked(hook = nameof(PlayerColorChanged))]
         public Color32 playerColor = Color.white;
 
         /// <summary>
         /// This is updated by UpdateData which is called from OnStartServer via InvokeRepeating
         /// </summary>
-        [SyncVar(hook = nameof(PlayerDataChanged))]
+        [Networked(hook = nameof(PlayerDataChanged))]
         public ushort playerData = 0;
 
         // This is called by the hook of playerNumber SyncVar above

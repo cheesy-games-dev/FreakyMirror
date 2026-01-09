@@ -12,7 +12,7 @@ namespace Mirror
     /// <para>Hook parameter allows you to define a method to be invoked when gets an value update. Notice that the hook method will not be called on the change side.</para>
     /// </summary>
     [AttributeUsage(AttributeTargets.Field)]
-    public class SyncVarAttribute : PropertyAttribute
+    public class NetworkedAttribute : PropertyAttribute
     {
         public string hook;
     }

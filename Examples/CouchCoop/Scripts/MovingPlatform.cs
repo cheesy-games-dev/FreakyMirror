@@ -9,7 +9,7 @@ namespace Mirror.Examples.CouchCoop
         public float moveSpeed = 0.5f;
         // allows for on demand syncing of stopping and starting platform movement, change via server
         // note,sync vars changed via inspector do not sync. This is optional feature, can be removed
-        [SyncVar]
+        [Networked]
         public bool moveObj = true;
 
         // optional fancy features

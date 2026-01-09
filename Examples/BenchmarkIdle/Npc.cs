@@ -9,7 +9,7 @@ namespace Mirror.Examples.BenchmarkIdle
         public Renderer rend;
 
         // the value to set dirty
-        [SyncVar] ulong value;
+        [Networked] ulong value;
 
         [Tooltip("Probability that this object just sleeps the whole time without ever getting dirty. (Npcs, Item drops, etc.)")]
         [Range(0, 1)] public float sleepingProbability = 0.80f; // 80% of the objects are sleeping
